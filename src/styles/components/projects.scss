@@ -1,0 +1,369 @@
+$animationDuration : 1s;
+
+.projects {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    &__item {
+        position: relative;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__back {
+        background: $mouvies;
+        width: 100%;
+        height: 100%;
+        position:absolute;
+    }
+
+    &__back {
+        top: 0;
+        left: 0;
+        // transition: $animationDuration;
+        transform:scaleY(0) translateZ(0);
+        transform-origin:bottom;
+        animation: 0.8s goOut ease-in-out forwards;
+
+        &.active {
+            transform-origin:top;
+            animation-delay:1s;
+            animation: 1s goIn ease-in-out forwards;
+            // animation: $animationDuration backToHomeFirst ease-in-out forwards;/
+            // animation-delay:$animationDuration;
+            // transform:scaleY(1) translateZ(0);
+            // transition-delay: 0.7s;
+        }
+
+        @keyframes goOut {
+            0% {
+
+                  transform:scaleY(1) translateZ(0);
+              }
+            1% {
+
+                  transform:scaleY(1) translateZ(0); }
+            100% {
+
+                  transform:scaleY(0) translateZ(0);
+            }
+        }
+
+        @keyframes goIn {
+            0% {
+                  // transform-origin:top;
+                  transform:scaleY(0);
+              }
+            // 100% {
+            //       transform-origin:top;
+            //       transform:scaleY(0); }
+            100% {
+                  // transform-origin:top;
+                  transform:scaleY(1);
+            }
+        }
+
+        &[data-project="0"] {
+            background: $mouvies;
+        }
+
+        &[data-project="1"] {
+            background: $arianespace;
+        }
+
+        &[data-project="2"] {
+            background: $thehkr;
+        }
+
+        &[data-project="3"] {
+            background: $nicolas;
+        }
+
+        &[data-project="4"] {
+            background: $dbarc;
+        }
+    }
+
+    &__center {
+        transform:scale(1);
+        transition:1s;
+        width: 55%;
+
+        &.big {
+            transform:scale(1.8181818182);
+        }
+    }
+
+    &__titles {
+        overflow: hidden;
+        height: 130px;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%,-50%);
+    }
+
+    &__title {
+        @extend %Montserrat;
+        color:white;
+        font-size: 108px;
+        letter-spacing: 0px;
+        text-shadow: 0px 2px 10px rgba(0,0,0,0.17);
+        position:absolute;
+        font-weight: 600;
+        text-align:center;
+        top: 50%;
+        width: 100%;
+        left: 50%;
+        transform:translate(-50%,50%);
+        transition: $animationDuration;
+
+        &.active {
+            transform:translate(-50%,-50%);
+            transition-delay:$animationDuration;
+        }
+    }
+
+    &__picture {
+        position:relative;
+        // box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.35);
+        transition:$animationDuration;
+        transform: translateY(0%);
+        padding-bottom: 61.65%;
+        overflow: hidden;
+
+        &.active {
+            transition-delay: $animationDuration;
+            transform: translateY(100%);
+        }
+    }
+
+    &__picwrap {
+        display: block;
+        transition:$animationDuration;
+        transform: translateY(-100%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        &[data-project="0"]:after {
+            background: $mouvies;
+            mix-blend-mode:darken;
+        }
+
+        &[data-project="1"]:after {
+            background: $arianespace;
+            mix-blend-mode:multiply;
+        }
+
+        &[data-project="2"]:after {
+            background: $thehkr;
+            mix-blend-mode:multiply;
+        }
+
+        &[data-project="3"]:after {
+            background: $nicolas;
+            mix-blend-mode:multiply;
+        }
+
+        &[data-project="4"]:after {
+            background: $dbarc;
+        }
+
+        &:after {
+            content: "";
+            display: none;
+            position:absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $mouvies;
+            mix-blend-mode:darken;
+        }
+
+        .projects__overflow {
+            overflow: hidden;
+
+            img {
+                transform: scale(1.2);
+                display: block;
+            }
+        }
+
+        &.active {
+            transform: translateY(0%);
+            transition-delay:$animationDuration;
+
+        }
+
+        // @keyframes goOut {
+        //     0% {
+        //           transform:scaleY(1) translateZ(0);
+        //       }
+        //     1% {
+        //           transform:scaleY(1) translateZ(0); }
+        //     100% {
+        //           transform:scaleY(0) translateZ(0);
+        //     }
+        // }
+    }
+
+    img {
+        max-width: 100%;
+        position:relative;
+    }
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__content {
+        position: absolute;
+        bottom: 0;
+        width: 55%;
+        transform: translate(-50%,calc(100% + 30px));
+        left: 50%;
+    }
+
+    &__list {
+        width: 100%;
+        display: flex;
+    }
+
+    &__category {
+        flex:1;
+        position:relative;
+    }
+
+    &__button {
+        transform-origin:right;
+        width: 100%;
+        transition:1s;
+        top: 0;
+        right: 0;
+        position: absolute;
+        text-align: center;
+        padding: 0px 30px;
+        display: block;
+        box-sizing:border-box;
+        background: white;
+        border-radius: 50px;
+        text-decoration: none;
+        height: 100%;
+        box-shadow: 0 20px 30px 0 rgba(0,0,0,0.2);
+        transform-origin:center;
+        @extend %Montserrat;
+
+        &:hover {
+            box-shadow: 0 20px 30px 0 rgba(0,0,0,0.1);
+        }
+
+        &.active {
+
+        }
+    }
+
+    &__link {
+        position: absolute;
+        top:0;
+        transform:translateY(0%);
+        width: 100%;
+        min-width: 100px;
+        transition: 0.5s;
+        opacity: 0;
+        color:white;
+
+        &.active {
+            transition-delay: all $animationDuration;
+            transform:translateY(0%);
+            opacity: 1;
+            transition: 3s;
+
+            &[data-project="0"] {
+                color: $mouvies;
+            }
+
+            &[data-project="1"] {
+                color: $arianespace;
+            }
+
+            &[data-project="2"] {
+                color: $thehkr;
+            }
+
+            &[data-project="3"] {
+                color: $nicolas;
+            }
+
+            &[data-project="4"] {
+                color: $dbarc;
+            }
+        }
+    }
+
+    &__links {
+        overflow: hidden;
+        height: 20px;
+        position:relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__name {
+        @extend %Montserrat;
+        color:rgba(0,0,0,0.15);
+        font-size: 20px;
+    }
+
+    &__types {
+        overflow: hidden;
+        margin-top: 5px;
+        height: 25px;
+        position: relative;
+    }
+
+    &__type {
+        @extend %Montserrat;
+        color:white;
+        font-size: 20px;
+        transition:$animationDuration;
+        transform:translateY(100%);
+        position: absolute;
+        top: 0;
+
+        &.active {
+            transition-delay:$animationDuration;
+            transform:translateY(0);
+        }
+    }
+
+    .link {
+        @extend %Montserrat;
+        cursor: pointer;
+        color: white;
+        position:absolute;
+        z-index: 1;
+        width: 100%;
+        text-align: center;
+
+        &--prev {
+            top: 30px;
+        }
+
+        &--next {
+            bottom: 30px;
+        }
+    }
+}

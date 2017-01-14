@@ -1,0 +1,98 @@
+.menu {
+    position:relative;
+    padding: 20px 0;
+    margin:0 auto;
+    text-align: center;
+    transition: 0.5s;
+    z-index: 9999;
+
+    &--absolute {
+        // position: absolute;
+        // top: 0;
+        // z-index: 10000;
+        // left: 50%;
+        // transform: translateX(-50%);
+
+        .menu__title, .menu__item {
+            color:white;
+        }
+    }
+
+    &__title {
+        font-family: 'Cormorant', serif;
+        font-size: 64px;
+        text-decoration:none;
+        color:black;
+        transition: 0.8s;
+
+
+
+        @include mobile {
+            font-size: 54px;
+        }
+    }
+
+    &__container {
+        width: 50%;
+        display: flex;
+        flex-direction:row;
+        margin: 0 auto;
+        margin-top: 30px;
+
+        @include mobile {
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+            margin-top: 15px;
+        }
+    }
+
+    &__item {
+        flex:1;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 24px;
+        text-transform: uppercase;
+        color:black;
+        text-decoration: none;
+        position:relative;
+        transition: 0.3s;
+
+        @include mobile {
+            font-size: 16px;
+        }
+
+        &:hover {
+            color:white;
+        }
+
+        &:hover:after {
+            opacity: 1;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            height: 30px;
+            background-image: url(/assets/images/background-link.png);
+            position: absolute;
+            background-size: 100% 31px;
+            top: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: 0.3s;
+            transform-origin: left;
+            left: 50%;
+            transform: translate(-50%,-57%);
+        }
+    }
+}
+
+.menu--absolute + #app {
+    margin-top: -170px !important;
+}
+
+.menu--absolute + #app.no-background {
+    transform: none !important;
+}

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant|Montserrat');
+@import "styles/layout/mediaqueries";
+@import "styles/layout/grid";
+@import "styles/layout/fonts";
+@import "styles/layout/colors";
+
+@import "styles/components/projects";
+@import "styles/components/intro";
+@import "styles/components/product";
+@import "styles/components/dots";
+
+@charset "UTF-8";
+
+body {
+    overflow: hidden;
+
+    &.inProduct {
+        overflow: visible;
+
+        .projects {
+            position: absolute;
+            z-index: -1;
+        }
+
+        .product {
+            z-index: 111;
+            display:block;
+        }
+    }
+}
+
+.site-wrapper {
+    transition: 0.5s;
+    transform: translateY(0);
+    overflow: hidden;
+
+    &.project {
+        transform: translateY(-100vh);
+    }
+}

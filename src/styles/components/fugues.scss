@@ -1,0 +1,297 @@
+.fugues {
+
+    .placeholder {
+        margin-bottom: 0;
+    }
+
+    &__type {
+        // @extend %Montserrat;
+        font-size: 80px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+        color:white;
+        text-transform: uppercase;
+    }
+
+    &__wrapper {
+        height: 100vh;
+        position:relative;
+    }
+
+    &__list {
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        position: absolute;
+        transition: 0.5s;
+
+        &:after {
+            transition: 0.5s;
+            content: "";
+            display: block;
+            width: 90%;
+            height: 85%;
+            position: absolute;
+            top: 0;
+            border: 4px solid black;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%) ;
+        }
+
+        @include mobile {
+            width: 100% !important;
+            left: 0 !important;
+            top: auto !important;
+            right: auto !important;
+            display: block;
+            height: 150px;
+            overflow: hidden;
+            position:relative !important;
+            flex: 1;
+            margin-bottom: 10px;
+
+            .placeholder {
+                height: 150px;
+
+                img {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            &:after {
+                height: 75%;
+            }
+        }
+    }
+
+    &__text {
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        margin:0;
+        color: black;
+        position:absolute;
+        font-size: 24px;
+    }
+
+    .mountain {
+        width: 30%;
+        left: 10%;
+        top: 10%;
+
+        .fugues__text {
+            bottom: 30px;
+            right: 40px;
+        }
+
+        &:hover:after {
+            transform:translate(calc(-50% + 40px),calc(-50% + 40px));
+        }
+    }
+
+    .desert {
+        width: 25%;
+        right: 10%;
+        top: 5%;
+
+        .fugues__text {
+            bottom:30px;
+            left: 30px;
+        }
+
+        &:after {
+            height: 93%;
+
+            @include mobile {
+                height: 75%;
+            }
+        }
+
+        &:hover:after {
+            transform:translate(calc(-50% - 40px),calc(-50% + 40px));
+        }
+    }
+
+    &__header {
+        position:relative;
+        transition: 0.5s;
+        transform:scale(1);
+
+        @include mobile {
+            height: 60vh;
+
+            .placeholder {
+                height: 100%;
+
+                img {
+                    height: 100%;
+                    width: auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+
+        &:after {
+            content:"";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            background:rgba(40,76,36,0.8);
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+    }
+}
+
+.fugues__type {
+    @extend %Montserrat;
+    font-size: 80px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    z-index: 2;
+    color:white;
+
+    @include mobile {
+        font-size: 40px;
+    }
+    // text-transform: uppercase;
+}
+
+span.title-down {
+    @extend %Montserrat;
+}
+
+.fugues-page .text section p {
+    @extend %Cormorant;
+    font-size: 1.1em;
+}
+
+.fugues-page .text figcaption {
+    @extend %Cormorant;
+}
+
+
+.fugues-top {
+    height: 80vh;
+    position: relative;
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &__title {
+        @extend %Montserrat;
+        font-size: 64px;
+        color: #FFFFFF;
+        letter-spacing: 0px;
+        padding: 0;
+    }
+
+    &__subtitle {
+        @extend %Cormorant;
+        font-size: 36px;
+        color: #FFFFFF;
+        letter-spacing: 0px;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    .placeholder {
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80vh;
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform:translate(-50%,-50%);
+        }
+    }
+}
+
+.fugues-quote {
+    background: #284C24;
+    position:relative;
+    height: 120vh;
+
+    &:before,&:after {
+        content: "";
+        display: block;
+        width: 20000px;
+        position:absolute;
+        height: 100%;
+        top:0;
+        background:#284C24;
+    }
+
+    &:before {
+        left: -19999px;
+    }
+
+    &:after {
+        right: -19999px;
+    }
+
+    &__quote {
+        @extend %Cormorant;
+        position: absolute;
+        left: 50%;
+        width: 90%;
+        text-align:center;
+        top: 50%;
+        transform:translate(-50%,-50%);
+        font-size: 48px;
+        color: #FFFFFF;
+        letter-spacing: 0px;
+    }
+
+    svg {
+        position:absolute;
+        left: 50%;
+        bottom:30%;
+        transform:translateX(-50%);
+    }
+}
+
+.load-fugue {
+    background:green;
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .clip-me {
+        position:absolute;
+        left: 50%;
+        top: 50%;
+        transform:translate(-50%,-50%);
+        width: 200px;
+        height: 200px;
+        background:white;
+        -webkit-clip-path: polygon(108px 57px,130px 28px,179px 111px,4px 114px,68px 1px);
+        clip-path: url("#clipPolygon");
+    }
+}

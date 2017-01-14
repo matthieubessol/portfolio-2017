@@ -1,0 +1,19 @@
+@mixin Cormorant() {
+  font-family: 'Cormorant', serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@mixin Montserrat() {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+%Cormorant {
+    @include Cormorant;
+}
+
+%Montserrat {
+    @include Montserrat;
+}

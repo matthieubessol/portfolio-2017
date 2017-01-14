@@ -1,0 +1,55 @@
+$mq-mobile-portrait     : 320px !default;
+$mq-mobile-landscape    : 480px !default;
+$mq-tablet-portrait     : 768px !default;
+$mq-tablet-landscape    : 1024px !default;
+$mq-desktop             : 1382px !default;
+
+
+@mixin tablet-landscape {
+    @media (max-width: $mq-tablet-landscape) {
+        @content;
+    }
+}
+
+@mixin tablet-landscape-below {
+    @media (max-width: $mq-tablet-landscape - 1) {
+        @content;
+    }
+}
+
+@mixin tablet-portrait {
+    @media (max-width: $mq-tablet-portrait) {
+        @content;
+    }
+}
+
+@mixin tablet-portrait-below {
+    @media (max-width: $mq-tablet-portrait - 1) {
+        @content;
+    }
+}
+
+@mixin mobile-only {
+  @include tablet-portrait-below {
+    @content;
+  }
+}
+
+@mixin mobile {
+    @media (max-width: $mq-mobile-landscape - 1) {
+        @content;
+    }
+}
+
+
+@mixin mobile-landscape {
+    @media (max-width: $mq-mobile-landscape) {
+        @content;
+    }
+}
+
+@mixin mobile-portrait {
+    @media (max-width: $mq-mobile-portrait) {
+        @content;
+    }
+}

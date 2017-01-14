@@ -1,0 +1,90 @@
+// @import "compass/css3";
+
+//vars
+$fg:white   ;
+$bg:#000;
+$pi:3.14;
+
+//config
+$menu-items:4;
+$open-distance:105px;
+$opening-angle:$pi*2;
+
+body{
+//  background:$bg;
+  color:white;
+}
+a{
+  color:inherit;
+}
+
+%goo{
+  filter:url('#shadowed-goo');
+  // debug
+  //background:rgba(255,0,0,0.2);
+}
+%ball{
+  background:$fg;
+  border-radius:100%;
+  width:30px;
+  height:30px;
+  margin-left:-40px;
+  position:absolute;
+  top:20px;
+  color:white;
+  text-align:center;
+  line-height:80px;
+  transform:translate3d(0,0,0);
+  transition:transform ease-out 1000ms;
+}
+
+.menu-item{
+  @extend %ball;
+}
+
+.menu{
+    @extend %goo;
+    position: absolute;
+    right: 5%;
+    width: 100px;
+    height: 150px;
+    box-sizing: border-box;
+    font-size: 20px;
+    text-align: right;
+    top: 50%;
+    transform: translateY(calc(-50% - 20px)) scale(0.5);
+}
+
+
+.menu-item{
+    display: inline-block;
+  &:hover{
+    background:white;
+    color:$fg;
+  }
+  @for $i from 1 through $menu-items{
+    &:nth-child(#{$i+2}){
+      transition-duration:1s;
+    }
+  }
+}
+
+.menu-open-button{
+  display: none;
+}
+.menu-open-button{
+  transition-timing-function:linear;
+  transition-duration:200ms;
+  transform:scale(0.8,0.8) translate3d(0,0,0);
+}
+
+.menu-item{
+  transition-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  @for $i from 1 through $menu-items{
+
+    &:nth-child(#{$i+2}){
+      transition-duration:90ms+(100ms*$i);
+      transform:translate3d(0,50px*$i,0);
+    }
+  }
+}
