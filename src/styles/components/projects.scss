@@ -93,10 +93,6 @@ $animationDuration : 1s;
         transform:scale(1);
         transition:1s;
         width: 55%;
-
-        &.big {
-            transform:scale(1.8181818182);
-        }
     }
 
     &__titles {
@@ -200,7 +196,6 @@ $animationDuration : 1s;
         &.active {
             transform: translateY(0%);
             transition-delay:$animationDuration;
-
         }
 
         // @keyframes goOut {
@@ -322,7 +317,7 @@ $animationDuration : 1s;
     }
 
     &__name {
-        @extend %Montserrat;
+        @extend %Varela;
         color:rgba(0,0,0,0.15);
         font-size: 20px;
     }
@@ -335,7 +330,7 @@ $animationDuration : 1s;
     }
 
     &__type {
-        @extend %Montserrat;
+        @extend %Varela;
         color:white;
         font-size: 20px;
         transition:$animationDuration;
@@ -350,7 +345,7 @@ $animationDuration : 1s;
     }
 
     .link {
-        @extend %Montserrat;
+        @extend %Varela;
         cursor: pointer;
         color: white;
         position:absolute;
@@ -364,6 +359,16 @@ $animationDuration : 1s;
 
         &--next {
             bottom: 30px;
+        }
+    }
+
+    &.off {
+        .projects__back {
+            animation: 0s goIn ease-in-out forwards;
+        }
+
+        .projects__picwrap.active, .projects__picture.active {
+            transition:0s;
         }
     }
 }

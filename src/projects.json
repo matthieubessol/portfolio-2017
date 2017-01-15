@@ -11,48 +11,7 @@
       "year":"2013",
       "client":"Tag Heuer",
       "agency":"Wise Digital",
-      "images":[
-        {
-          "url1":"https://unsplash.it/1800/750/?random",
-          "url2":"https://unsplash.it/1800/750/?random",
-          "type":2
-        },
-        {
-          "url":"https://unsplash.it/1800/1500/?random",
-          "type":1
-        },
-        {
-          "url":"https://unsplash.it/1800/1500/?random",
-          "type":"full"
-        },
-        {
-          "url1":"https://unsplash.it/900/750/?random",
-          "url2":"https://unsplash.it/900/750/?random",
-          "type":2
-        },
-        {
-          "url1":"https://unsplash.it/900/500/?random",
-          "url2":"https://unsplash.it/900/500/?random",
-          "url3":"https://unsplash.it/900/500/?random",
-          "type":3
-        },
-        {
-          "url":"https://unsplash.it/1800/1500/?random",
-          "type":1
-        }
-      ]
-    },
-    {
-      "id":0,
-      "name": "arianespace",
-      "nameUrl": "arianespace",
-      "baseline": "A new design for a new Youtube Channel",
-      "cover": "https://unsplash.it/1648/1016/?random",
-      "what":"Youtube Channel",
-      "role":"Art Direction, UI Design",
-      "year":"2013",
-      "client":"Tag Heuer",
-      "agency":"Wise Digital",
+      "color":"#FF004F",
       "images":[
         {
           "url1":"https://unsplash.it/1800/750/?random",
@@ -86,15 +45,59 @@
     },
     {
       "id":1,
+      "name": "arianespace",
+      "nameUrl": "arianespace",
+      "baseline": "A new design for a new Youtube Channel",
+      "cover": "https://unsplash.it/1648/1016/?random",
+      "what":"Youtube Channel",
+      "role":"Art Direction, UI Design",
+      "year":"2013",
+      "client":"Tag Heuer",
+      "agency":"Wise Digital",
+      "color":"#00C1FF",
+      "images":[
+        {
+          "url1":"https://unsplash.it/1800/750/?random",
+          "url2":"https://unsplash.it/1800/750/?random",
+          "type":2
+        },
+        {
+          "url":"https://unsplash.it/1800/1500/?random",
+          "type":1
+        },
+        {
+          "url":"https://unsplash.it/1800/1500/?random",
+          "type":"full"
+        },
+        {
+          "url1":"https://unsplash.it/900/750/?random",
+          "url2":"https://unsplash.it/900/750/?random",
+          "type":2
+        },
+        {
+          "url1":"https://unsplash.it/900/500/?random",
+          "url2":"https://unsplash.it/900/500/?random",
+          "url3":"https://unsplash.it/900/500/?random",
+          "type":3
+        },
+        {
+          "url":"https://unsplash.it/1800/1500/?random",
+          "type":1
+        }
+      ]
+    },
+    {
+      "id":2,
       "name": "the hiker",
       "nameUrl": "thehiker",
       "baseline": "Just do it",
-      "cover": "https://unsplash.it/1648/1016/?random",
+      "cover": "https://unsplash.it/1648/1014/?random",
       "what":"Janoski",
       "role":"Art Direction, UI Design",
       "year":"2013",
       "client":"Tag Heuer",
       "agency":"Wise Digital",
+      "color":"#6F6F6F",
       "images":[
         {
           "url":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
@@ -103,16 +106,17 @@
       ]
     },
     {
-      "id":2,
+      "id":3,
       "name": "nicolas bessol",
       "nameUrl": "nicolasbessol",
       "baseline": "Don't crack under pressure",
-      "cover": "https://unsplash.it/1648/1016/?random",
+      "cover": "https://unsplash.it/1648/1017/?random",
       "what":"Retweet",
       "role":"Art Direction, UI Design",
       "year":"2013",
       "client":"Tag Heuer",
       "agency":"Wise Digital",
+      "color":"#2c3e50",
       "images":[
         {
           "url1":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
@@ -145,16 +149,17 @@
       ]
     },
     {
-      "id":3,
+      "id":4,
       "name": "dbarc",
       "nameUrl": "dbarc",
       "baseline": "Don't crack under pressure",
-      "cover": "https://unsplash.it/1648/1016/?random",
+      "cover": "https://unsplash.it/1648/1013/?random",
       "what":"Tente",
       "role":"Art Direction, UI Design",
       "year":"2014",
       "client":"Tag Heuer",
       "agency":"Wise Digital",
+      "color":"#00FF8F",
       "images":[
         {
           "url1":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",

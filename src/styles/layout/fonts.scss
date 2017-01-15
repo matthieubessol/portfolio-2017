@@ -10,10 +10,19 @@
   font-weight: normal;
 }
 
+@mixin Varela() {
+  font-family: 'Varela Round', sans-serif;
+  font-style: normal;
+}
+
 %Cormorant {
     @include Cormorant;
 }
 
 %Montserrat {
     @include Montserrat;
+}
+
+%Varela {
+    @include Varela;
 }

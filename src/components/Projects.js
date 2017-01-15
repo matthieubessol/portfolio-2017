@@ -3,19 +3,26 @@ import {Link} from "react-router";
 import ProjectsPictures from './ProjectsPictures.js';
 import ProjectsTitles from './ProjectsTitles.js';
 import ProjectsCategories from './ProjectsCategories.js';
+import ProjectsBack from './ProjectsBack.js';
+import Filter from './Filter.js';
 
 class Projects extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      nbCurrent:this.props.current
+      nbCurrent:this.props.current,
+      isLoad:false,
     };
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({nbCurrent:nextProps.current});
     this.showValues(nextProps.current);
+  }
+
+  componentDidMount() {
+    this.showValues(this.state.nbCurrent);
   }
 
   showValues(nbCurrent) {
@@ -28,50 +35,54 @@ class Projects extends Component {
               document.querySelectorAll("[data-project]")[i].classList.remove('active');
       }
 
-      document.getElementsByClassName('projects__picture')[0].classList.add('active');
+      //document.getElementsByClassName('projects__picture')[0].classList.add('active');
       document.getElementsByClassName('js-link')[0].classList.add('active');
       setTimeout(function() {
-          document.getElementsByClassName('projects__picture')[0].classList.remove('active');
+          //document.getElementsByClassName('projects__picture')[0].classList.remove('active');
           document.getElementsByClassName('js-link')[0].classList.remove('active');
       }, 1000);
 
       document.getElementsByClassName('js-select')[0].style.transform = "translate3d(0,"+nbCurrent*50+"px,0) scale(1.3)"
   }
 
-  handleClick(e) {
-    // var picWidth = document.getElementsByClassName('projects__overflow')[0].offsetWidth;
-    // console.log(window.innerWidth / picWidth);
-    //document.getElementsByClassName('projects__center')[0].style.transform = "scale("+window.innerWidth / picWidth+")";
-    document.getElementsByClassName('projects__center')[0].classList.add("big");
+  handleLoad() {
+    this.setState({
+      isLoad:true
+    })
+  }
+
+  handleDotClick(e) {
+    e.preventDefault();
+    this.props.goTo(e.target.dataset.item)
   }
 
   render() {
     var link = "/mouvies";
     if(this.props.data[this.state.nbCurrent])
       link = this.props.data[this.state.nbCurrent].nameUrl;
-    return (
-      <div className="projects">
-          <div className="projects__item js-project">
 
-              <div className="projects__backs">
-                  <div className="projects__back" data-project="0"></div>
-                  <div className="projects__back" data-project="1"></div>
-                  <div className="projects__back" data-project="2"></div>
-                  <div className="projects__back" data-project="3"></div>
-                  <div className="projects__back" data-project="4"></div>
-              </div>
+    var projectsClasses = "projects off";
+    if(this.state.isLoad)
+      projectsClasses = "projects";
+    return (
+      <div className={projectsClasses}>
+          <Filter active={this.state.isLoad}/>
+          <div className="projects__item js-project">
+              <ProjectsBack data={this.props.data} current={this.state.nbCurrent} />
               <div className="projects__wrapper">
                   <div className="projects__center">
-                      <ProjectsPictures data={this.props.data}/>
+                    <Link to={link}>
+                      <ProjectsPictures finishLoad={this.handleLoad.bind(this)} data={this.props.data} current={this.state.nbCurrent}/>
+                    </Link>
                   </div>
-                  <ProjectsTitles data={this.props.data}/>
+                  <ProjectsTitles link={link} data={this.props.data}/>
                   <div className="projects__content">
                       <div className="projects__list">
-                          <ProjectsCategories data={this.props.data} title="Category"/>
-                          <ProjectsCategories data={this.props.data} title="Agency"/>
-                          <ProjectsCategories data={this.props.data} title="Year"/>
+                          <ProjectsCategories data={this.props.data} current={this.state.nbCurrent} title="Category"/>
+                          <ProjectsCategories data={this.props.data} current={this.state.nbCurrent} title="Agency"/>
+                          <ProjectsCategories data={this.props.data} current={this.state.nbCurrent} title="Year"/>
                           <div className="projects__category">
-                              <Link to={link} data-project="0" className="js-link projects__button" onClick={this.handleClick.bind(this)}>
+                              <Link to={link} data-project="0" className="js-link projects__button">
                                   <div className="projects__links">
                                       <div className="projects__link" data-project="0">See project</div>
                                       <div className="projects__link" data-project="1">See project</div>
@@ -87,15 +98,13 @@ class Projects extends Component {
 
           </div>
           <div className="pagination">
-
-
               <nav className="menu">
                 <div className="menu-item js-select"></div>
-                <a href="#" className="menu-item js-dot" data-item="0"> <i className="fa fa-bar-chart"></i> </a>
-                <a href="#" className="menu-item js-dot" data-item="1"> <i className="fa fa-plus"></i> </a>
-                <a href="#" className="menu-item js-dot" data-item="2"> <i className="fa fa-heart"></i> </a>
-                <a href="#" className="menu-item js-dot" data-item="3"> <i className="fa fa-envelope"></i> </a>
-                <a href="#" className="menu-item js-dot" data-item="4"> <i className="fa fa-envelope"></i> </a>
+                <a href="#" className="menu-item js-dot" data-item="0" onClick={this.handleDotClick.bind(this)}> <i className="fa fa-bar-chart"></i> </a>
+                <a href="#" className="menu-item js-dot" data-item="1" onClick={this.handleDotClick.bind(this)}> <i className="fa fa-plus"></i> </a>
+                <a href="#" className="menu-item js-dot" data-item="2" onClick={this.handleDotClick.bind(this)}> <i className="fa fa-heart"></i> </a>
+                <a href="#" className="menu-item js-dot" data-item="3" onClick={this.handleDotClick.bind(this)}> <i className="fa fa-envelope"></i> </a>
+                <a href="#" className="menu-item js-dot" data-item="4" onClick={this.handleDotClick.bind(this)}> <i className="fa fa-envelope"></i> </a>
               </nav>
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
                   <defs>

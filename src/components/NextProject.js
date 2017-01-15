@@ -10,12 +10,13 @@ class NextProject extends Component {
         i = Math.floor((4)*Math.random());
       }while(this.props.id===i);
       this.state = {
+        i:i,
         data:this.props.data[i]
       };
     }
 
   componentDidMount() {
-
+    this.props.getCorrect(this.state.i);
   }
 
   render() {

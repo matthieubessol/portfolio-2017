@@ -1,5 +1,6 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Cormorant|Montserrat");
-@import url("https://fonts.googleapis.com/css?family=Archivo+Black");
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
 /**
  * Gridpak Beta SCSS
  *
@@ -236,10 +237,14 @@
 #app .no-bottom {
   margin-bottom: 0; }
 
-.projects__title, .projects__button, .projects__name, .projects__type, .projects .link, .product__title, .main-infos__type, .main-infos__value, .next-project__content {
+.projects__title, .projects__button, .product__title, .next-project__content {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: normal; }
+
+.projects__name, .projects__type, .projects .link, .main-infos__type, .main-infos__value {
+  font-family: 'Varela Round', sans-serif;
+  font-style: normal; }
 
 .projects {
   width: 100vw;
@@ -294,8 +299,6 @@
     transform: scale(1);
     transition: 1s;
     width: 55%; }
-    .projects__center.big {
-      transform: scale(1.81818); }
   .projects__titles {
     overflow: hidden;
     height: 130px;
@@ -468,10 +471,44 @@
       top: 30px; }
     .projects .link--next {
       bottom: 30px; }
+  .projects.off .projects__back {
+    animation: 0s goIn ease-in-out forwards; }
+  .projects.off .projects__picwrap.active, .projects.off .projects__picture.active  {
+    transition: 0s; }
 
 .header {
   position: fixed;
-  z-index: 10000000; }
+  z-index: 10000000;
+  width: 100%; }
+  .header__right {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    background: white;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50%; }
+  .header .button__about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.6s; }
+    .header .button__about:first-child:after {
+      content: '\0270C';
+      font-size: 26px; }
+    .header .button__about:last-child {
+      transform: translate(-50%, -50%) scale(0); }
+      .header .button__about:last-child:after {
+        content: '\0270A';
+        font-size: 26px; }
+  .header .header__right--open .button__about:first-child {
+    transform: translate(-50%, -50%) scale(0); }
+  .header .header__right--open .button__about:last-child {
+    transform: translate(-50%, -50%) scale(1); }
 
 .intro {
   width: 100vw;
@@ -492,6 +529,9 @@
 .product {
   width: 100vw;
   position: relative; }
+  .product__content {
+    background: white;
+    position: relative; }
   .product.active .product__cover {
     transform: translate(-50%, -50%) scale(2); }
     .product.active .product__cover img {
@@ -513,14 +553,22 @@
     overflow: hidden; }
     .product__header .scroll {
       transition: 0.6s ease-out;
+      transition-delay: 2.1s;
       width: 60px;
       height: 60px;
       background: white;
       border-radius: 50%;
       position: absolute;
       bottom: 50px;
-      transform: translateY(0) translateX(-50%);
-      left: 50%; }
+      transform: translateY(calc(100px)) translateX(-50%);
+      left: 50%;
+      box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.3); }
+      .product__header .scroll svg {
+        height: 70%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); }
   .product__back {
     position: absolute;
     width: 100%;
@@ -588,15 +636,18 @@
   .main-infos__right {
     flex: 6;
     font-size: 1.125rem;
-    line-height: 1.5rem; }
+    line-height: 1.5rem;
+    font-family: "Varela Round";
+    color: #BBC2C9; }
   .main-infos__left {
     flex: 4; }
   .main-infos__type {
-    font-size: 1.125rem; }
+    font-size: 1.125rem;
+    color: #495057; }
   .main-infos__value {
     font-size: 1.125rem;
     font-weight: lighter;
-    color: #c5c5c5; }
+    color: #BBC2C9; }
   .main-infos__item {
     margin-bottom: 30px;
     display: inline-block;
@@ -722,6 +773,55 @@ a {
     transition-duration: 490ms;
     transform: translate3d(0, 200px, 0); }
 
+.about {
+  display: flex;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  display: flex;
+  pointer-events: none; }
+  .about.open {
+    pointer-events: auto; }
+    .about.open .about__left, .about.open .about__right {
+      transform: translateY(0%); }
+  .about__left, .about__right {
+    flex: 1;
+    height: 100%;
+    transition: 0.6s ease-in-out;
+    transform: translateY(-100%); }
+  .about__left {
+    flex: 1;
+    height: 100%;
+    background-image: url("./profile.jpg");
+    background-size: cover;
+    transition-delay: 0.1s; }
+  .about__right {
+    background: white;
+    flex: 1;
+    height: 100%;
+    background: white; }
+  .about__content {
+    font-family: "Varela Round";
+    font-size: 1.3rem;
+    color: #BBC2C9;
+    letter-spacing: 0.86px;
+    line-height: 30px;
+    padding: 0 10%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow-y: scroll; }
+    .about__content p:first-child {
+      margin-top: 0; }
+    .about__content p:last-child {
+      margin-bottom: 0; }
+    .about__content span {
+      color: #495057; }
+
+a {
+  text-decoration: none; }
+
 body {
   color: black; }
   body.inProduct {
@@ -752,6 +852,8 @@ body {
   display: block; }
   .example-enter .product__title span:after, .example-enter-active .product__title span:after {
     animation-delay: 2s; }
+  .example-enter .scroll, .example-enter-active .scroll {
+    transform: translateY(0) translateX(-50%); }
 
 .example-leave, .example-leave-active {
   transition: 1500ms;
@@ -762,7 +864,8 @@ body {
   .example-leave .projects__center, .example-leave-active .projects__center {
     transition: 1000ms;
     transition-delay: 1000ms;
-    z-index: 10; }
+    z-index: 10;
+    transform: scale(1.81818); }
     .example-leave .projects__center .projects__overflow img, .example-leave-active .projects__center .projects__overflow img {
       transition: 1000ms;
       transition-delay: 1000ms;
@@ -791,6 +894,8 @@ body {
       transform: translateY(100%);
       animation: 1s nextIn forwards;
       animation-delay: 2s; }
+  .nextproject-enter .scroll, .nextproject-enter-active .scroll {
+    transform: translateY(0) translateX(-50%); }
 
 .nextproject-leave, .nextproject-leave-active {
   background: white;
@@ -822,6 +927,10 @@ body {
     .projecttohome-leave-active .product__cover img, .projecttohome-leave .product__cover img {
       transition: 1s;
       transform: scale(1.2); }
+  .projecttohome-leave-active .scroll, .projecttohome-leave .scroll {
+    transform: translateY(calc(100% + 50px)) translateX(-50%) !important;
+    z-index: 11111111111111;
+    transition: 0.6s !important; }
   .projecttohome-leave-active .product__title, .projecttohome-leave .product__title {
     z-index: 99999999999;
     position: absolute;
@@ -834,5 +943,31 @@ body {
   padding: 0 10%;
   margin: 0 auto;
   box-sizing: border-box; }
+
+.filter {
+  position: fixed;
+  background: white;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000000000000;
+  pointer-events: none;
+  transition: 1s; }
+  .filter.off {
+    opacity: 0;
+    pointer-events: none; }
+
+.no-scroll {
+  overflow: hidden; }
+
+.header__left {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  font-size: 26px;
+  color: white;
+  font-family: "Varela Round"; }
 
 /*# sourceMappingURL=App.css.map */

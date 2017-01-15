@@ -12,8 +12,8 @@ class Images extends Component {
           return (
             <div className="centerpad" key={i}>
               <div className="row image image--half js-fade">
-                <div className="small-12 medium-6 large-6 columns"><img src={image.url1}/></div>
-                <div className="small-12 medium-6 large-6 columns"><img src={image.url2}/></div>
+                <div className="small-12 medium-6 large-6 columns"><img src={image.url1} role="presentation"/></div>
+                <div className="small-12 medium-6 large-6 columns"><img src={image.url2} role="presentation"/></div>
               </div>
             </div>
           );
@@ -21,7 +21,7 @@ class Images extends Component {
           return(
             <div className="row image image--full js-fade" key={i}>
               <div className="small-12 medium-12 large-12">
-                <img src={image.url}/>
+                <img src={image.url} role="presentation"/>
               </div>
             </div>
           );
@@ -30,9 +30,9 @@ class Images extends Component {
           return(
             <div className="centerpad" key={i}>
               <div className="row image image--third js-fade">
-                <div className="small-12 medium-4 large-4 columns"><img src={image.url1}/></div>
-                <div className="small-12 medium-4 large-4 columns"><img src={image.url2}/></div>
-                <div className="small-12 medium-4 large-4 columns"><img src={image.url3}/></div>
+                <div className="small-12 medium-4 large-4 columns"><img src={image.url1} role="presentation"/></div>
+                <div className="small-12 medium-4 large-4 columns"><img src={image.url2} role="presentation"/></div>
+                <div className="small-12 medium-4 large-4 columns"><img src={image.url3} role="presentation"/></div>
               </div>
             </div>
           );
@@ -41,7 +41,7 @@ class Images extends Component {
             <div className="centerpad" key={i}>
               <div className="row image js-fade">
                 <div className="small-12 medium-12 large-12 columns">
-                  <img src={image.url}/>
+                  <img src={image.url} role="presentation"/>
                 </div>
               </div>
             </div>

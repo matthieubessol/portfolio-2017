@@ -1,12 +1,9 @@
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import React, { Component } from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
 import Header from './components/Header.js'
-
-var prevAnim = "";
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +12,7 @@ class App extends Component {
     this.state = {
       prevPath:"",
       path:"",
+      currentHome:0,
     };
   }
   componentDidUpdate() {
@@ -30,14 +28,17 @@ class App extends Component {
     }
   }
 
+  handleCurrent(val) {
+    console.log(val)
+    this.setState({currentHome:val});
+  }
+
   render() {
-    var nameTransition = "example", enterTimeout = 2000;
-    if(this.state.prevPath.pathname != "/" && this.state.path.pathname != "/"){
-      console.log("ok");
+    var nameTransition = "example", enterTimeout = 1;
+    if(this.state.prevPath.pathname !== "/" && this.state.path.pathname !== "/"){
       nameTransition="nextproject";
-      enterTimeout = 3000;
-    } else if(this.state.path.pathname == "/"){
-      console.log("project-tohome")
+      enterTimeout = 1;
+    } else if(this.state.path.pathname === "/"){
       nameTransition="projecttohome";
       enterTimeout = 3000;
     }
@@ -53,8 +54,11 @@ class App extends Component {
               transitionAppearTimeout={2000}
             >
             {React.cloneElement(this.props.children, {
-        key: location.pathname
-      })}
+              key: location.pathname,
+              prevId:0,
+              getCurrent:this.handleCurrent.bind(this),
+              toShowFirst:this.state.currentHome
+            })}
         </ReactCSSTransitionGroup>
 
     </div>

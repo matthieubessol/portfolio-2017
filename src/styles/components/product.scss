@@ -4,6 +4,11 @@ $animationDuration : 1s;
     width: 100vw;
     position: relative;
 
+    &__content {
+        background: white;
+        position:relative;
+    }
+
     &.active {
         .product__cover {
             transform: translate(-50%,-50%) scale(2);
@@ -67,14 +72,28 @@ $animationDuration : 1s;
 
         .scroll {
             transition:0.6s ease-out;
+            transition-delay:2.1s;
             width: 60px;
             height: 60px;
             background:white;
             border-radius: 50%;
             position:absolute;
             bottom:50px;
-            transform:translateY(0) translateX(-50%);
+            transform:translateY(calc(100px)) translateX(-50%);
             left:50%;
+            box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.3);
+
+            // &.no-delay {
+            //     transition-delay: 0s;
+            // }
+
+            svg {
+                height: 70%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
         }
     }
 
@@ -168,6 +187,8 @@ $animationDuration : 1s;
         flex:6;
         font-size: 1.125rem;
         line-height: 1.5rem;
+        font-family: "Varela Round";
+        color:$lighttext;
     }
 
     &__left {
@@ -175,15 +196,16 @@ $animationDuration : 1s;
     }
 
     &__type {
-        @extend %Montserrat;
+        @extend %Varela;
         font-size: 1.125rem;
+        color:$blacktext;
     }
 
     &__value {
-        @extend %Montserrat;
+        @extend %Varela;
         font-size: 1.125rem;
         font-weight: lighter;
-        color:#c5c5c5;
+        color:$lighttext;
     }
 
     &__item {
