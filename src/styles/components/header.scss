@@ -8,13 +8,13 @@ $animationDuration : 1s;
     &__right {
         cursor: pointer;
         position:absolute;
-        right: 20px;
-        top: 20px;
+        right: 1.25rem;
+        top: 1.25rem;
         z-index: 1;
-        width: 60px;
-        height: 60px;
+        width: 3.75rem;
+        height: 3.75rem;
         background:white;
-        box-shadow:0 2px 14px 0 rgba(0,0,0,0.3);
+        box-shadow:0 0.125rem 0.875rem 0 rgba(0,0,0,0.3);
         border-radius: 50%;
     }
 
@@ -27,7 +27,7 @@ $animationDuration : 1s;
 
         &:first-child:after {
             content: '\0270C';
-            font-size: 26px;
+            font-size: 1.625rem;
         }
 
         &:last-child {
@@ -35,7 +35,7 @@ $animationDuration : 1s;
 
             &:after {
                 content: '\0270A';
-                font-size: 26px;
+                font-size: 1.625rem;
             }
         }
     }
@@ -46,6 +46,21 @@ $animationDuration : 1s;
         }
         .button__about:last-child {
             transform:translate(-50%,-50%) scale(1);
+        }
+    }
+
+    @include mobile {
+        height: 100%;
+        pointer-events:none;
+
+        .header__right {
+            top:initial;
+            bottom: 1.25rem;
+            pointer-events:visible;
+        }
+
+        .header__left {
+            pointer-events:visible;
         }
     }
 }

@@ -34,19 +34,30 @@
         flex:1;
         height: 100%;
         background:white;
+
+        @include mobile {
+            overflow-y:scroll;
+        }
     }
 
     &__content {
         font-family: "Varela Round";
         font-size: 1.3rem;
         color:$lighttext;
-        letter-spacing: 0.86px;
-        line-height: 30px;
+        letter-spacing: 0.05375rem;
+        line-height: 1.875rem;
         padding: 0 10%;
         position: relative;
         top: 50%;
         transform: translateY(-50%);
         overflow-y: scroll;
+
+        @include mobile {
+            padding: 0 20px;
+            top: 40px;
+            transform: translateY(0);
+
+        }
 
         p:first-child{
             margin-top: 0;
@@ -60,4 +71,18 @@
             color: $blacktext;
         }
     }
+
+    @include mobile {
+        //width: calc(100% - 40px);
+        display: block;
+
+        .about__left {
+            display: none;
+        }
+
+        .about__right {
+            display: block;
+        }
+    }
+
 }

@@ -23,7 +23,6 @@ class Routes extends Component {
   }
 
   render() {
-
     return (
       <Router history={browserHistory}>
         <Route path="/" component={App} currentProjectHome={this.currentProjectHome.bind(this)} ignoreScrollBehavior>

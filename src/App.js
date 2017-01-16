@@ -33,6 +33,25 @@ class App extends Component {
     this.setState({currentHome:val});
   }
 
+  updateDimensions() {
+    if(window.innerWidth>=768) {
+        var perc = window.innerWidth * 100 / 1280;
+        document.getElementsByTagName("html")[0].style.fontSize = perc + "%";
+    }
+  }
+
+  componentWillMount() {
+      this.updateDimensions();
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+  }
+
+  componentWillUnmount() {
+      window.removeEventListener("resize", this.updateDimensions);
+  }
+
   render() {
     var nameTransition = "example", enterTimeout = 1;
     if(this.state.prevPath.pathname !== "/" && this.state.path.pathname !== "/"){

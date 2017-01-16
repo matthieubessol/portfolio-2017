@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Projects from '../components/Projects'
 import data from '../projects.json';
 
-var time = null;
+var time = null,
+    touchStart = 0;
 
 class Home extends Component {
 
@@ -11,7 +12,9 @@ class Home extends Component {
     this.state = {
       currentProject:this.props.toShowFirst,
       numberProjects:data.project.length - 1,
-      data:data.project
+      data:data.project,
+      touchStart:0,
+      touchMove:0,
     }
   }
 
@@ -60,9 +63,30 @@ class Home extends Component {
     }
   }
 
+  handleTouchStart(e) {
+    touchStart = e.changedTouches[0].clientY;
+  }
+
+  handleTouchMove(e) {
+    let newY = e.changedTouches[0].clientY;
+    if(time) {
+      if(Date.now() - time > 2000){
+        time = Date.now();
+        if(newY - touchStart < 0) this.goNext();
+        else this.goPrev();
+      }
+    } else {
+        time = Date.now();
+        if(newY - touchStart < 0) this.goNext();
+        else this.goPrev();
+    }
+  }
+
   componentDidMount() {
     document.addEventListener('keydown', this.handleKey.bind(this),true);
     this.refs.siteWrapper.addEventListener('mousewheel', this.handleMouseWheel.bind(this),true);
+    this.refs.siteWrapper.addEventListener('touchstart', this.handleTouchStart.bind(this),true);
+    this.refs.siteWrapper.addEventListener('touchmove', this.handleTouchMove.bind(this),true);
   }
 
   componentWillUnmount() {

@@ -24,11 +24,15 @@ class Project extends Component {
   }
 
   componentDidMount() {
-    this.refs.product.addEventListener('mousewheel', this.handleScroll.bind(this),false);
+    if(window.innerWidth>=768) {
+      this.refs.product.addEventListener('mousewheel', this.handleScroll.bind(this),false);
+    }
   }
 
   componentWillUnmount() {
-    this.refs.product.removeEventListener('mousewheel', this.handleScroll.bind(this),false);
+    if(window.innerWidth>=768) {
+      this.refs.product.removeEventListener('mousewheel', this.handleScroll.bind(this),false);
+    }
     this.props.getCurrent(this.state.correctNext)
   }
 
@@ -48,12 +52,16 @@ class Project extends Component {
   }
 
   render() {
+
+    let divStyle = {
+      backgroundImage: 'url(' + this.state.data.cover + ')',
+    };
+
     return (
       <div className="product" ref="product">
           <div className="product__header" ref="header">
               <div className="product__back"></div>
-              <div className="product__cover">
-                  <img src={this.state.data.cover} className="js-cover" role="presentation"/>
+              <div className="product__cover" style={divStyle}>
               </div>
               <div className="overflow">
                 <div className="product__title" ref="title"><span>{this.state.data.name}</span></div>

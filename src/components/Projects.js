@@ -42,7 +42,7 @@ class Projects extends Component {
           document.getElementsByClassName('js-link')[0].classList.remove('active');
       }, 1000);
 
-      document.getElementsByClassName('js-select')[0].style.transform = "translate3d(0,"+nbCurrent*50+"px,0) scale(1.3)"
+      document.getElementsByClassName('js-select')[0].style.transform = "translate3d(0,"+(nbCurrent*50)/16+"rem,0) scale(1.3)"
   }
 
   handleLoad() {
