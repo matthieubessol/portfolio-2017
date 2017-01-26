@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Projects from '../components/Projects'
+import ProjectsMobile from '../components/ProjectsMobile'
 import data from '../projects.json';
 
 var time = null,
@@ -83,19 +84,36 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener('keydown', this.handleKey.bind(this),true);
-    this.refs.siteWrapper.addEventListener('mousewheel', this.handleMouseWheel.bind(this),true);
-    this.refs.siteWrapper.addEventListener('touchstart', this.handleTouchStart.bind(this),true);
-    this.refs.siteWrapper.addEventListener('touchmove', this.handleTouchMove.bind(this),true);
+    if(!this.isMobile()){
+      document.addEventListener('keydown', this.handleKey.bind(this),true);
+      this.refs.siteWrapper.addEventListener('mousewheel', this.handleMouseWheel.bind(this),true);
+      this.refs.siteWrapper.addEventListener('touchstart', this.handleTouchStart.bind(this),true);
+      this.refs.siteWrapper.addEventListener('touchmove', this.handleTouchMove.bind(this),true);
+    }
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKey.bind(this),true);
-    this.refs.siteWrapper.removeEventListener('mousewheel', this.handleMouseWheel.bind(this),true);
-    this.props.getCurrent(this.state.currentProject)
+    if(!this.isMobile()){
+      document.removeEventListener('keydown', this.handleKey.bind(this),true);
+      this.refs.siteWrapper.removeEventListener('mousewheel', this.handleMouseWheel.bind(this),true);
+      this.props.getCurrent(this.state.currentProject)
+    }
+  }
+
+  isMobile() {
+    if(window.innerWidth <= 768)
+      return true;
+    return false;
   }
 
   render() {
+    if(this.isMobile()) {
+      return (
+        <div className="wrapper">
+          <ProjectsMobile data={this.state.data} />
+        </div>
+      );
+    }
     return (
       <div className="site-wrapper" ref="siteWrapper">
         <div className="translate-wrapper" ref="translateWrapper">

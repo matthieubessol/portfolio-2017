@@ -61,10 +61,10 @@ $animationDuration : 1s;
         height: 100vh;
         overflow: hidden;
 
-        @include mobile {
-            height: auto;
-            overflow:visible;
-        }
+        // @include mobile {
+        //     height: auto;
+        //     overflow:visible;
+        // }
 
         // &:after {
         //     transition:1s ease-in-out;
@@ -82,6 +82,7 @@ $animationDuration : 1s;
         // }
 
         .scroll {
+            cursor:pointer;
             transition:0.6s ease-out;
             transition-delay:2.1s;
             width: 3.75rem;
@@ -90,13 +91,17 @@ $animationDuration : 1s;
             border-radius: 50%;
             position:absolute;
             bottom:50px;
-            transform:translateY(6.25rem) translateX(-50%);
+            transform:translateY(0) translateX(-50%);
             left:50%;
             box-shadow: 0px 0.125rem 1.25rem 0px rgba(0,0,0,0.3);
 
             @include mobile {
-                display: none;
+                transform:translateY(50%) translateX(-50%);
             }
+
+            // @include mobile {
+            //     display: none;
+            // }
 
             // &.no-delay {
             //     transition-delay: 0s;
@@ -156,7 +161,7 @@ $animationDuration : 1s;
 
         @include mobile {
             position:relative;
-            height: 83vw;
+            height: 100%;
             top: 0;
             transform: translate(0,0) scale(1);
             left: 0;
@@ -203,21 +208,12 @@ $animationDuration : 1s;
             }
         }
         @include mobile {
-            position: relative;
-            color: black;
-            font-size: 40px;
-            top: 0;
-            transform: initial;
-            left: 0;
-            z-index: 111111;
-            text-align:left;
-            text-shadow: none;
-            padding:0 20px;
-            margin-top: 30px;
+            font-size: 3rem;
+            width:85%;
 
             span {
                 animation:initial;
-                color:black;
+                color:white;
             }
         }
     }
@@ -302,6 +298,7 @@ $animationDuration : 1s;
     }
 
     .columns {
+        flex:1;
         margin-right: 5%;
 
         &:last-child {
@@ -358,4 +355,11 @@ $animationDuration : 1s;
     .product__title span:after {
         animation: initial;
     }
+}
+
+.image--full {
+     .large-12 {
+
+        overflow:hidden;
+     }
 }

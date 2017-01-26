@@ -76,6 +76,12 @@ body {
     }
 }
 
+.example-appear {
+    .scroll {
+        transform:translateY(0) translateX(-50%);
+    }
+}
+
 .example-leave,.example-leave-active {
     transition:1500ms;
     position:absolute;
@@ -202,7 +208,7 @@ body {
 
 
 .centerpad {
-    max-width: 1400px;
+    //max-width: 1400px;
     width: 100%;
     padding: 0 10%;
     margin: 0 auto;
@@ -242,4 +248,55 @@ body {
     font-size: 1.625rem;
     color: white;
     font-family: "Varela Round";
+}
+
+.mobile-enter {
+    position:absolute;
+    z-index: 1;
+    &:before {
+        content: "";
+        display: block;
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: black;
+        opacity: 0;
+        pointer-events:none;
+        transition:1s;
+        z-index: 1111;
+        animation-delay:0s;
+        animation:filterIn 1s;
+        animation-delay:0s;
+    }
+}
+
+@keyframes filterIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+.mobile-leave,.mobile-leave-active {
+    &:before {
+        content: "";
+        display: block;
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: black;
+        opacity: 1;
+        pointer-events:none;
+        transition:1s;
+        z-index: 111111111111;
+        animation:filterOut 1s forwards;
+        animation-delay:1s;
+    }
+}
+
+@keyframes filterOut {
+    from {opacity:1;}
+    to {opacity:0;}
 }

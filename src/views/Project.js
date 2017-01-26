@@ -5,6 +5,9 @@ import NextProject from "../components/NextProject";
 import Scroll from "../components/Scroll";
 import data from '../projects.json';
 
+import smoothScroll from 'smoothscroll';
+
+
 class Project extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +54,12 @@ class Project extends Component {
     })
   }
 
+  handleScrollClick() {
+    console.log('ok');
+    event.preventDefault();
+    smoothScroll(this.refs.productContent, 800);
+  }
+
   render() {
 
     let divStyle = {
@@ -66,11 +75,11 @@ class Project extends Component {
               <div className="overflow">
                 <div className="product__title" ref="title"><span>{this.state.data.name}</span></div>
               </div>
-              <Scroll scroll={this.state.scroll} ref="scroll" color={this.state.data.color}/>
+              <Scroll scroll={this.state.scroll} ref="scroll" color={this.state.data.color} handleScrollClick={this.handleScrollClick.bind(this)}/>
           </div>
-          <div className="product__content">
-            <MainInfos/>
-            <Images data={this.state.data}/>
+          <div className="product__content" ref="productContent">
+            <MainInfos data={this.state.data}/>
+            <Images data={this.state.data} scroll={this.state.scroll}/>
             <NextProject getCorrect={this.getCorrectNext.bind(this)} data={data.project} id={this.state.id}/>
           </div>
       </div>

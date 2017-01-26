@@ -483,6 +483,34 @@
   .projects.off .projects__picwrap.active, .projects.off .projects__picture.active  {
     transition: 0s; }
 
+.previews {
+  background: black;
+  padding: 90px 20px; }
+
+.preview {
+  width: 100%;
+  height: calc(60vw - 40px);
+  margin-top: 30px;
+  display: block;
+  position: relative; }
+  .preview__background {
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%; }
+  .preview:first-child {
+    margin-top: 0; }
+  .preview__title {
+    color: white;
+    font-family: "Montserrat";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    text-align: center;
+    width: 100%; }
+
 .header {
   position: fixed;
   z-index: 10000000;
@@ -571,11 +599,8 @@
     width: 100%;
     height: 100vh;
     overflow: hidden; }
-    @media (max-width: 479px) {
-      .product__header {
-        height: auto;
-        overflow: visible; } }
     .product__header .scroll {
+      cursor: pointer;
       transition: 0.6s ease-out;
       transition-delay: 2.1s;
       width: 3.75rem;
@@ -584,12 +609,12 @@
       border-radius: 50%;
       position: absolute;
       bottom: 50px;
-      transform: translateY(6.25rem) translateX(-50%);
+      transform: translateY(0) translateX(-50%);
       left: 50%;
       box-shadow: 0px 0.125rem 1.25rem 0px rgba(0, 0, 0, 0.3); }
       @media (max-width: 479px) {
         .product__header .scroll {
-          display: none; } }
+          transform: translateY(50%) translateX(-50%); } }
       .product__header .scroll svg {
         height: 70%;
         position: absolute;
@@ -632,7 +657,7 @@
     @media (max-width: 479px) {
       .product__cover {
         position: relative;
-        height: 83vw;
+        height: 100%;
         top: 0;
         transform: translate(0, 0) scale(1);
         left: 0; } }
@@ -669,20 +694,11 @@
     transform: scaleX(1); } }
     @media (max-width: 479px) {
       .product__title {
-        position: relative;
-        color: black;
-        font-size: 40px;
-        top: 0;
-        transform: initial;
-        left: 0;
-        z-index: 111111;
-        text-align: left;
-        text-shadow: none;
-        padding: 0 20px;
-        margin-top: 30px; }
+        font-size: 3rem;
+        width: 85%; }
         .product__title span {
           animation: initial;
-          color: black; } }
+          color: white; } }
 
 .main-infos {
   padding: 100px 0;
@@ -739,6 +755,7 @@
     max-width: 100%;
     width: 100%; }
   .image .columns {
+    flex: 1;
     margin-right: 5%; }
     .image .columns:last-child {
       margin-right: 0; }
@@ -775,6 +792,9 @@
   transform: translateY(calc(100% + 50px)) translateX(-50%); }
 .product.example-enter .product__title span:after, .product.nextproject-enter .product__title span:after {
   animation: initial; }
+
+.image--full .large-12 {
+  overflow: hidden; }
 
 body {
   color: white; }
@@ -944,6 +964,9 @@ body {
   .example-enter .scroll, .example-enter-active .scroll {
     transform: translateY(0) translateX(-50%); }
 
+.example-appear .scroll {
+  transform: translateY(0) translateX(-50%); }
+
 .example-leave, .example-leave-active {
   transition: 1500ms;
   position: absolute;
@@ -1030,7 +1053,6 @@ body {
     transform: translate(-50%, -50%); }
 
 .centerpad {
-  max-width: 1400px;
   width: 100%;
   padding: 0 10%;
   margin: 0 auto;
@@ -1064,5 +1086,52 @@ body {
   font-size: 1.625rem;
   color: white;
   font-family: "Varela Round"; }
+
+.mobile-enter {
+  position: absolute;
+  z-index: 1; }
+  .mobile-enter:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: 1s;
+    z-index: 1111;
+    animation-delay: 0s;
+    animation: filterIn 1s;
+    animation-delay: 0s; }
+
+@keyframes filterIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.mobile-leave:before, .mobile-leave-active:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 1;
+  pointer-events: none;
+  transition: 1s;
+  z-index: 111111111111;
+  animation: filterOut 1s forwards;
+  animation-delay: 1s; }
+
+@keyframes filterOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
 
 /*# sourceMappingURL=App.css.map */

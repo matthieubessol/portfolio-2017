@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
+import utils from '../modules/useful.js';
 
 class Images extends Component {
 
   componentDidMount() {
 
+  }
+
+  componentWillReceiveProps(nextProps) {
+    let scroll = nextProps.scroll;
+    for (var i = document.getElementsByClassName("js-toScale").length - 1; i >= 0; i--) {
+      let offsetPic = utils.getOffset(document.getElementsByClassName("image--full")[i]).top,
+          bottomScroll = scroll + window.innerHeight + document.getElementsByClassName("image--full")[i].offsetHeight*0.33,
+          valToScale =2-(bottomScroll/offsetPic);
+      if(valToScale>=1)
+        document.getElementsByClassName("js-toScale")[i].style.transform = "scale("+ valToScale +")";
+      else
+        document.getElementsByClassName("js-toScale")[i].style.transform = "scale("+ 1 +")";
+    }
   }
 
   render() {
@@ -21,7 +35,7 @@ class Images extends Component {
           return(
             <div className="row image image--full js-fade" key={i}>
               <div className="small-12 medium-12 large-12">
-                <img src={image.url} role="presentation"/>
+                <img src={image.url} role="presentation" className="js-toScale" ref="toScroll"/>
               </div>
             </div>
           );

@@ -52,6 +52,12 @@ class App extends Component {
       window.removeEventListener("resize", this.updateDimensions);
   }
 
+  isMobile() {
+    if(window.innerWidth <= 768)
+      return true;
+    return false;
+  }
+
   render() {
     var nameTransition = "example", enterTimeout = 1;
     if(this.state.prevPath.pathname !== "/" && this.state.path.pathname !== "/"){
@@ -60,6 +66,11 @@ class App extends Component {
     } else if(this.state.path.pathname === "/"){
       nameTransition="projecttohome";
       enterTimeout = 3000;
+    }
+
+    if(this.isMobile()) {
+      nameTransition="mobile";
+      enterTimeout = 1;
     }
 
     return (

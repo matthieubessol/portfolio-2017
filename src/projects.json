@@ -5,40 +5,29 @@
       "name": "mouvies",
       "nameUrl": "mouvies",
       "baseline": "A new design for a new Youtube Channel",
-      "cover": "https://unsplash.it/1648/1015/?random",
-      "what":"Youtube Channel",
-      "role":"Art Direction, UI Design",
-      "year":"2013",
+      "cover": "/images/mouvies/cover.jpg",
+      "what":"iOs, Android, Web",
+      "role":"Developer",
+      "year":"2016-2017",
       "client":"Tag Heuer",
-      "agency":"Wise Digital",
+      "agency":"Solo project",
       "color":"#FF004F",
+      "description":"Mouvies is a project I've started to learn React. It's a movie search engine base in TMDB's API. While I was progressing, I wanted to test React Native and enjoy the reusability of the code. I found React Native very clever and wanted to go deeper. The app is currently in progress and there is a first version of the website online.",
       "images":[
         {
-          "url1":"https://unsplash.it/1800/750/?random",
-          "url2":"https://unsplash.it/1800/750/?random",
-          "type":2
-        },
-        {
-          "url":"https://unsplash.it/1800/1500/?random",
+          "url":"/images/mouvies/mouvies_01.jpg",
           "type":1
         },
         {
-          "url":"https://unsplash.it/1800/1500/?random",
+          "url":"/images/mouvies/mouvies_04.jpg",
+          "type":1
+        },
+        {
+          "url":"/images/mouvies/mouvies_03.jpg",
           "type":"full"
         },
         {
-          "url1":"https://unsplash.it/900/750/?random",
-          "url2":"https://unsplash.it/900/750/?random",
-          "type":2
-        },
-        {
-          "url1":"https://unsplash.it/900/500/?random",
-          "url2":"https://unsplash.it/900/500/?random",
-          "url3":"https://unsplash.it/900/500/?random",
-          "type":3
-        },
-        {
-          "url":"https://unsplash.it/1800/1500/?random",
+          "url":"/images/mouvies/mouvies_02.jpg",
           "type":1
         }
       ]
@@ -48,13 +37,14 @@
       "name": "arianespace",
       "nameUrl": "arianespace",
       "baseline": "A new design for a new Youtube Channel",
-      "cover": "https://unsplash.it/1648/1016/?random",
-      "what":"Youtube Channel",
-      "role":"Art Direction, UI Design",
-      "year":"2013",
+      "cover": "/images/arianespace/cover.jpg",
+      "what":"Website",
+      "role":"Front-end developer",
+      "year":"2015",
       "client":"Tag Heuer",
-      "agency":"Wise Digital",
+      "agency":"Octave & Octave",
       "color":"#00C1FF",
+      "description":"I've made a 4 months internship at the French agency Octave & Octave based in Paris. I've worked on many interisting projects and learn process while working on large scale project. On Arianespace, I've especially worked on animations and develop several pages on this website.",
       "images":[
         {
           "url1":"https://unsplash.it/1800/750/?random",
@@ -91,13 +81,14 @@
       "name": "the hiker",
       "nameUrl": "thehiker",
       "baseline": "Just do it",
-      "cover": "https://unsplash.it/1648/1014/?random",
-      "what":"Janoski",
-      "role":"Art Direction, UI Design",
-      "year":"2013",
-      "client":"Tag Heuer",
-      "agency":"Wise Digital",
+      "cover": "/images/thehiker/cover.jpg",
+      "what":"Website",
+      "role":"Full Stack Developer",
+      "year":"2016",
+      "client":"School",
+      "agency":"Solo project",
       "color":"#6F6F6F",
+      "description":"After a nice trip in Canada, I wanted to imagine with a friend how a travel website can be done. The response was The Hiker. A website where articles are written to make you feel something. We wanted to make it personnal. To don't be lost while visiting the website, we used sound, animation and pictures to continue the travel. Performance of images loading was also a key feature. It was also a way to develop a website with pure Javascript.",
       "images":[
         {
           "url":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
@@ -111,11 +102,12 @@
       "nameUrl": "nicolasbessol",
       "baseline": "Don't crack under pressure",
       "cover": "https://unsplash.it/1648/1017/?random",
-      "what":"Retweet",
-      "role":"Art Direction, UI Design",
-      "year":"2013",
-      "client":"Tag Heuer",
-      "agency":"Wise Digital",
+      "what":"Portfolio",
+      "role":"Developer",
+      "year":"2017",
+      "client":"Nicolas Bessol",
+      "agency":"Nicolas Bessol",
+      "description":"This is family business. I've develop a website for Nicolas Bessol, an interactive Art Director & Graphic Designer from Paris. I've used React.js to test in on a portfolio and continue to review pros and cons of that technology.",
       "color":"#2c3e50",
       "images":[
         {
@@ -150,15 +142,16 @@
     },
     {
       "id":4,
-      "name": "dbarc",
-      "nameUrl": "dbarc",
+      "name": "droom",
+      "nameUrl": "droom",
       "baseline": "Don't crack under pressure",
-      "cover": "https://unsplash.it/1648/1013/?random",
-      "what":"Tente",
-      "role":"Art Direction, UI Design",
-      "year":"2014",
+      "cover": "/images/droom/cover.jpg",
+      "what":"Game",
+      "role":"Full stack developer",
+      "year":"2017",
       "client":"Tag Heuer",
-      "agency":"Wise Digital",
+      "agency":"School project",
+      "description":"For our yearly mentored project, we decided to make a web game. It's a music game that you can play with an electronic drum (or keyboard) and you have to play the right notes at the right time. We've worked with the powerful webmidi API and React. It was interesting to use that technology on a canvas.",
       "color":"#00FF8F",
       "images":[
         {
