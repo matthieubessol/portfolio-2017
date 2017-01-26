@@ -59,6 +59,13 @@
 
         }
 
+        p.small-bottom {
+            margin-bottom:0.625rem;
+        }
+        p.small-bottom {
+            margin-top:0.625rem;
+        }
+
         p:first-child{
             margin-top: 0;
         }
@@ -85,4 +92,31 @@
         }
     }
 
+}
+
+.logos {
+    display: block;
+    height:1.25rem;
+
+    &__item {
+        width:1.25rem;
+        height:1.25rem;
+        display: inline-block;
+        margin-right: 1.25rem;
+
+        &--github {
+            background-image: url('/images/logo/github.png');
+            background-size:cover;
+        }
+
+        &--codepen {
+            background-image: url('/images/logo/codepen.png');
+            background-size:cover;
+        }
+
+        &--twitter {
+            background-image: url('/images/logo/twitter.jpg');
+            background-size:cover;
+        }
+    }
 }

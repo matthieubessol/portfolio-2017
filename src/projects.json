@@ -101,7 +101,7 @@
       "name": "nicolas bessol",
       "nameUrl": "nicolasbessol",
       "baseline": "Don't crack under pressure",
-      "cover": "https://unsplash.it/1648/1017/?random",
+      "cover": "/images/nicolas/cover.jpg",
       "what":"Portfolio",
       "role":"Developer",
       "year":"2017",
@@ -111,31 +111,19 @@
       "color":"#2c3e50",
       "images":[
         {
-          "url1":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "url2":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "type":2
-        },
-        {
-          "url":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
+          "url":"/images/nicolas/nicolas_01.jpg",
           "type":1
         },
         {
-          "url":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
+          "url":"/images/nicolas/nicolas_02.jpg",
           "type":"full"
         },
         {
-          "url1":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "url2":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "type":2
+          "url":"/images/nicolas/nicolas_03.jpg",
+          "type":1
         },
         {
-          "url1":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "url2":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "url3":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "type":3
-        },
-        {
-          "url":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
+          "url":"/images/nicolas/nicolas_04.jpg",
           "type":1
         }
       ]

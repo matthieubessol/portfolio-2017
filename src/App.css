@@ -914,6 +914,10 @@ a {
         padding: 0 20px;
         top: 40px;
         transform: translateY(0); } }
+    .about__content p.small-bottom {
+      margin-bottom: 0.625rem; }
+    .about__content p.small-bottom {
+      margin-top: 0.625rem; }
     .about__content p:first-child {
       margin-top: 0; }
     .about__content p:last-child {
@@ -927,6 +931,24 @@ a {
         display: none; }
       .about .about__right {
         display: block; } }
+
+.logos {
+  display: block;
+  height: 1.25rem; }
+  .logos__item {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+    margin-right: 1.25rem; }
+    .logos__item--github {
+      background-image: url("/images/logo/github.png");
+      background-size: cover; }
+    .logos__item--codepen {
+      background-image: url("/images/logo/codepen.png");
+      background-size: cover; }
+    .logos__item--twitter {
+      background-image: url("/images/logo/twitter.jpg");
+      background-size: cover; }
 
 a {
   text-decoration: none; }
