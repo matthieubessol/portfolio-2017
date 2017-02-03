@@ -4,6 +4,8 @@ import Images from "../components/Images";
 import NextProject from "../components/NextProject";
 import Scroll from "../components/Scroll";
 import data from '../projects.json';
+import ReactDOM from 'react-dom';
+import Header from '../components/Header'
 
 import smoothScroll from 'smoothscroll';
 
@@ -28,13 +30,16 @@ class Project extends Component {
 
   componentDidMount() {
     if(window.innerWidth>=768) {
-      this.refs.product.addEventListener('mousewheel', this.handleScroll.bind(this),false);
+      document.getElementsByClassName("header__left")[0].classList.remove('active');
+      //this.refs.product.addEventListener('DOMMouseScroll', this.handleScroll.bind(this),false);
+      window.addEventListener('scroll', this.handleScroll.bind(this),false);
     }
   }
 
   componentWillUnmount() {
     if(window.innerWidth>=768) {
-      this.refs.product.removeEventListener('mousewheel', this.handleScroll.bind(this),false);
+      window.removeEventListener('scroll', this.handleScroll.bind(this),false);
+      // this.refs.product.removeEventListener('DOMMouseScroll', this.handleScroll.bind(this),false);
     }
     this.props.getCurrent(this.state.correctNext)
   }
@@ -47,15 +52,20 @@ class Project extends Component {
 
   handleScroll() {
     let scrolled = window.pageYOffset || document.documentElement.scrollTop;
-    this.refs.header.style.transform = "translateY("+ scrolled/4 +"px) translateZ(0)";
-    this.refs.title.style.transform = "translate(-50%,calc(-50% + -"+ scrolled/2 +"px))";
+    if(document.getElementsByClassName('product__header')[0])
+      document.getElementsByClassName('product__header')[0].style.transform = "translateY("+ scrolled/4 +"px) translateZ(0)";
+    if(document.getElementsByClassName('product__title')[0])
+    document.getElementsByClassName('product__title')[0].style.transform = "translate(-50%,calc(-50% + -"+ scrolled/2 +"px))";
+    if(scrolled > document.getElementsByClassName('product__header')[0].offsetHeight)
+      document.getElementsByClassName("header__left")[0].classList.add('active');
+    else
+      document.getElementsByClassName("header__left")[0].classList.remove('active');
     this.setState({
       scroll:scrolled/2
     })
   }
 
   handleScrollClick() {
-    console.log('ok');
     event.preventDefault();
     smoothScroll(this.refs.productContent, 800);
   }
@@ -68,6 +78,7 @@ class Project extends Component {
 
     return (
       <div className="product" ref="product">
+          <Header mobileFixed={false}/>
           <div className="product__header" ref="header">
               <div className="product__back"></div>
               <div className="product__cover" style={divStyle}>

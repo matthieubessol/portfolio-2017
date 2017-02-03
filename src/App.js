@@ -16,7 +16,8 @@ class App extends Component {
     };
   }
   componentDidUpdate() {
-    ReactDOM.findDOMNode(this).scrollIntoView();
+    if(this.props.params.nameProject!=="")
+      ReactDOM.findDOMNode(this).scrollIntoView();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -29,7 +30,6 @@ class App extends Component {
   }
 
   handleCurrent(val) {
-    console.log(val)
     this.setState({currentHome:val});
   }
 
@@ -65,7 +65,7 @@ class App extends Component {
       enterTimeout = 1;
     } else if(this.state.path.pathname === "/"){
       nameTransition="projecttohome";
-      enterTimeout = 3000;
+      enterTimeout = 1;
     }
 
     if(this.isMobile()) {
@@ -73,9 +73,11 @@ class App extends Component {
       enterTimeout = 1;
     }
 
+    console.log(nameTransition)
+
     return (
       <div>
-        <Header />
+        <Header mobileFixed={true}/>
         <ReactCSSTransitionGroup
               transitionName={nameTransition}
               transitionEnterTimeout={enterTimeout}

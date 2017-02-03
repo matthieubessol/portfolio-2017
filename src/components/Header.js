@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from "react-router";
 import About from "./About";
+import utils from "../modules/useful.js";
 
 class Header extends Component {
   constructor(props) {
@@ -22,11 +23,14 @@ class Header extends Component {
   }
 
   render() {
-    var classes = "header__right"
+    var classes = "header__right", headerClasses = "header ";
     if(this.state.openAbout)
       classes = "header__right header__right--open";
+
+    if(!this.props.mobileFixed)
+      headerClasses += "no-fixed";
     return (
-      <div className="header">
+      <div className={headerClasses}>
         <div className="header__left">
           <Link to="/">matthieu bessol</Link>
         </div>

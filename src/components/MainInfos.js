@@ -7,6 +7,9 @@ class MainInfos extends Component {
   }
 
   render() {
+    let textToProject = "Visit the site";
+    if(this.props.data.linkType==="github")
+        textToProject = "More on my Github"
     return (
         <div className="centerpad">
             <div className="main-infos">
@@ -26,6 +29,9 @@ class MainInfos extends Component {
                     <div className="main-infos__item">
                         <div className="main-infos__type">Agency</div>
                         <div className="main-infos__value">{this.props.data.agency}</div>
+                    </div>
+                    <div className="main-infos__item">
+                        <a target="_blank" href={this.props.data.urlToProject} className="main-infos__type main-infos__link">{textToProject}</a>
                     </div>
                 </div>
                 <div className="main-infos__right">{this.props.data.description}</div>

@@ -1,28 +1,35 @@
-@mixin Cormorant() {
-  font-family: 'Cormorant', serif;
+@font-face {
+  font-family: 'MaisonNeue-Bold';
+  src: url('fonts/MaisonNeue-Bold.eot');
+  src: url('fonts/MaisonNeue-Bold.woff') format('woff'), url('fonts/MaisonNeue-Bold.ttf') format('truetype'), url('fonts/MaisonNeue-Bold.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AHAMONO';
+  src: url('fonts/AHAMONO-Regular.eot');
+  src: url('fonts/AHAMONO-Regular.woff') format('woff'), url('fonts/AHAMONO-Regular.ttf') format('truetype'), url('fonts/AHAMONO-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin MaisonNeueBold() {
+  font-family: 'MaisonNeue-Bold';
   font-style: normal;
   font-weight: normal;
 }
 
-@mixin Montserrat() {
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-}
-
-@mixin Varela() {
-  font-family: 'Varela Round', sans-serif;
+@mixin AHAMANO() {
+  font-family: "AHAMONO";
   font-style: normal;
 }
 
-%Cormorant {
-    @include Cormorant;
+%MaisonNeueBold {
+    @include MaisonNeueBold;
 }
 
-%Montserrat {
-    @include Montserrat;
+%AHAMANO {
+    @include AHAMANO;
 }
 
-%Varela {
-    @include Varela;
-}

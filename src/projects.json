@@ -4,9 +4,11 @@
       "id":0,
       "name": "mouvies",
       "nameUrl": "mouvies",
+      "linkType":"website",
       "baseline": "A new design for a new Youtube Channel",
       "cover": "/images/mouvies/cover.jpg",
-      "what":"iOs, Android, Web",
+      "what":"iOS, Android, Web",
+      "urlToProject":"http://www.matthieubessol.com/movie/client",
       "role":"Developer",
       "year":"2016-2017",
       "client":"Tag Heuer",
@@ -36,6 +38,8 @@
       "id":1,
       "name": "arianespace",
       "nameUrl": "arianespace",
+      "urlToProject":"http://www.arianespace.com/",
+      "linkType":"website",
       "baseline": "A new design for a new Youtube Channel",
       "cover": "/images/arianespace/cover.jpg",
       "what":"Website",
@@ -47,31 +51,35 @@
       "description":"I've made a 4 months internship at the French agency Octave & Octave based in Paris. I've worked on many interisting projects and learn process while working on large scale project. On Arianespace, I've especially worked on animations and develop several pages on this website.",
       "images":[
         {
-          "url1":"https://unsplash.it/1800/750/?random",
-          "url2":"https://unsplash.it/1800/750/?random",
-          "type":2
-        },
-        {
-          "url":"https://unsplash.it/1800/1500/?random",
+          "url":"/images/arianespace/arianespace_1.jpg",
           "type":1
         },
         {
-          "url":"https://unsplash.it/1800/1500/?random",
+          "url":"/images/arianespace/arianespace_2.jpg",
+          "type":1
+        },
+        {
+          "url":"/images/arianespace/arianespace_3.jpg",
+          "type":1
+        },
+        {
+          "url":"/images/arianespace/arianespace_4.jpg",
           "type":"full"
         },
         {
-          "url1":"https://unsplash.it/900/750/?random",
-          "url2":"https://unsplash.it/900/750/?random",
-          "type":2
+          "url":"/images/arianespace/arianespace_5.jpg",
+          "type":1
         },
         {
-          "url1":"https://unsplash.it/900/500/?random",
-          "url2":"https://unsplash.it/900/500/?random",
-          "url3":"https://unsplash.it/900/500/?random",
-          "type":3
+          "url":"/images/arianespace/arianespace_6.jpg",
+          "type":1
         },
         {
-          "url":"https://unsplash.it/1800/1500/?random",
+          "url":"/images/arianespace/arianespace_8.jpg",
+          "type":1
+        },
+        {
+          "url":"/images/arianespace/arianespace_7.jpg",
           "type":1
         }
       ]
@@ -82,6 +90,8 @@
       "nameUrl": "thehiker",
       "baseline": "Just do it",
       "cover": "/images/thehiker/cover.jpg",
+      "linkType":"website",
+      "urlToProject":"http://www.matthieubessol.com/thehiker/",
       "what":"Website",
       "role":"Full Stack Developer",
       "year":"2016",
@@ -91,8 +101,16 @@
       "description":"After a nice trip in Canada, I wanted to imagine with a friend how a travel website can be done. The response was The Hiker. A website where articles are written to make you feel something. We wanted to make it personnal. To don't be lost while visiting the website, we used sound, animation and pictures to continue the travel. Performance of images loading was also a key feature. It was also a way to develop a website with pure Javascript.",
       "images":[
         {
-          "url":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "type":50
+          "url":"/images/thehiker/thehiker_1.jpg",
+          "type":1
+        },
+        {
+          "url":"/images/thehiker/thehiker_3.jpg",
+          "type":"full"
+        },
+        {
+          "url":"/images/thehiker/thehiker_2.jpg",
+          "type":1
         }
       ]
     },
@@ -102,6 +120,8 @@
       "nameUrl": "nicolasbessol",
       "baseline": "Don't crack under pressure",
       "cover": "/images/nicolas/cover.jpg",
+      "linkType":"website",
+      "urlToProject":"http://www.nbessol.com/",
       "what":"Portfolio",
       "role":"Developer",
       "year":"2017",
@@ -134,6 +154,8 @@
       "nameUrl": "droom",
       "baseline": "Don't crack under pressure",
       "cover": "/images/droom/cover.jpg",
+      "linkType":"github",
+      "urlToProject":"https://github.com/Aleqsandr/droom",
       "what":"Game",
       "role":"Full stack developer",
       "year":"2017",
@@ -143,31 +165,15 @@
       "color":"#00FF8F",
       "images":[
         {
-          "url1":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "url2":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "type":2
-        },
-        {
-          "url":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
+          "url":"/images/droom/droom_1.jpg",
           "type":1
         },
         {
-          "url":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "type":"full"
+          "url":"/images/droom/droom_2.jpg",
+          "type":1
         },
         {
-          "url1":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "url2":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "type":2
-        },
-        {
-          "url1":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "url2":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "url3":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
-          "type":3
-        },
-        {
-          "url":"https://placeholdit.imgix.net/~text?txtsize=52&bg=441100&txt=550%C3%97550&w=550&h=550",
+          "url":"/images/droom/droom_3.jpg",
           "type":1
         }
       ]

@@ -1,7 +1,7 @@
 $animationDuration : 1s;
 
 .product {
-    width: 100vw;
+
     position: relative;
 
     @include mobile {
@@ -169,7 +169,7 @@ $animationDuration : 1s;
     }
 
     &__title {
-        @extend %Montserrat;
+        @extend %MaisonNeueBold;
         color:white;
         font-size: 6.75rem;
         letter-spacing: 0px;
@@ -227,22 +227,37 @@ $animationDuration : 1s;
         flex:6;
         font-size: 1.125rem;
         line-height: 1.5rem;
-        font-family: "Varela Round";
+        @extend %AHAMANO;
         color:$lighttext;
     }
 
     &__left {
-        flex:4;
+        flex:5;
     }
 
     &__type {
-        @extend %Varela;
+        @extend %AHAMANO;
         font-size: 1.125rem;
         color:$blacktext;
     }
 
+    &__link {
+        position:relative;
+
+        &:after {
+            content:"";
+            display:block;
+            position:absolute;
+            left:0;
+            bottom:-1px;
+            width: 100%;
+            height:1px;
+            background:#495057;
+        }
+    }
+
     &__value {
-        @extend %Varela;
+        @extend %AHAMANO;
         font-size: 1.125rem;
         font-weight: lighter;
         color:$lighttext;
@@ -252,9 +267,18 @@ $animationDuration : 1s;
         margin-bottom: 30px;
         display: inline-block;
         width: calc(40% - 3px);
+        vertical-align: top;
+
+        &:nth-child(2n+1){
+            width: calc(50% - 3px);
+        }
 
         @include mobile {
-            width: calc(50% - 3px);
+            width: calc(40% - 3px);
+
+            &:nth-child(2n+1){
+                width: calc(60% - 3px);
+            }
         }
     }
 
@@ -276,6 +300,10 @@ $animationDuration : 1s;
 
 .row {
     padding:100px 0;
+
+    &.image {
+        padding-top: 0;
+    }
 
     @include mobile {
         padding: 30px 0;
@@ -329,7 +357,7 @@ $animationDuration : 1s;
         left: 10%;
         top: 50%;
         transform:translateY(-50%);
-        @extend %Montserrat;
+        @extend %MaisonNeueBold;
         color:white;
     }
 

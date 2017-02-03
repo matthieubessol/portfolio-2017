@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Projects from '../components/Projects'
 import ProjectsMobile from '../components/ProjectsMobile'
 import data from '../projects.json';
+import Header from '../components/Header'
+import utils from '../modules/useful.js'
 
 var time = null,
     touchStart = 0;
@@ -20,14 +22,18 @@ class Home extends Component {
   }
 
   handleKey(e){
-    e.preventDefault();
+    //e.preventDefault();
     if(e.keyCode === 40) this.goNext();
     else if(e.keyCode === 38) this.goPrev();
   }
 
   goNext() {
-      if(this.state.currentProject >= this.state.numberProjects)
+      if(this.state.currentProject >= this.state.numberProjects) {
+        this.setState({
+          currentProject:0,
+        })
         return;
+      }
 
       this.setState({
         currentProject:this.state.currentProject+1
@@ -35,8 +41,12 @@ class Home extends Component {
   }
 
   goPrev() {
-      if(this.state.currentProject === 0)
-          return;
+      if(this.state.currentProject === 0){
+        this.setState({
+          currentProject:this.state.numberProjects
+        })
+        return;
+      }
 
       this.setState({
         currentProject:this.state.currentProject-1
@@ -84,32 +94,28 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    if(!this.isMobile()){
+    if(!utils.isMobile()){
+      document.getElementsByClassName("header__left")[0].classList.remove('active');
       document.addEventListener('keydown', this.handleKey.bind(this),true);
-      this.refs.siteWrapper.addEventListener('mousewheel', this.handleMouseWheel.bind(this),true);
+      this.refs.siteWrapper.addEventListener('wheel', this.handleMouseWheel.bind(this),true);
       this.refs.siteWrapper.addEventListener('touchstart', this.handleTouchStart.bind(this),true);
       this.refs.siteWrapper.addEventListener('touchmove', this.handleTouchMove.bind(this),true);
     }
   }
 
   componentWillUnmount() {
-    if(!this.isMobile()){
+    if(!utils.isMobile()){
       document.removeEventListener('keydown', this.handleKey.bind(this),true);
-      this.refs.siteWrapper.removeEventListener('mousewheel', this.handleMouseWheel.bind(this),true);
+      this.refs.siteWrapper.removeEventListener('wheel', this.handleMouseWheel.bind(this),true);
       this.props.getCurrent(this.state.currentProject)
     }
   }
 
-  isMobile() {
-    if(window.innerWidth <= 768)
-      return true;
-    return false;
-  }
-
   render() {
-    if(this.isMobile()) {
+    if(utils.isMobile()) {
       return (
         <div className="wrapper">
+          <Header mobileFixed={false}/>
           <ProjectsMobile data={this.state.data} />
         </div>
       );
