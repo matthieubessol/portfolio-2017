@@ -16,8 +16,12 @@ class App extends Component {
     };
   }
   componentDidUpdate() {
-    if(this.props.params.nameProject!=="")
-      ReactDOM.findDOMNode(this).scrollIntoView();
+    if(this.props.params.nameProject!=="") {
+      let self = this;
+      setTimeout(() => {
+        ReactDOM.findDOMNode(this).scrollIntoView();
+      },750)
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -72,8 +76,6 @@ class App extends Component {
       nameTransition="mobile";
       enterTimeout = 1;
     }
-
-    console.log(nameTransition)
 
     return (
       <div>

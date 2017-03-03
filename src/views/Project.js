@@ -52,10 +52,12 @@ class Project extends Component {
 
   handleScroll() {
     let scrolled = window.pageYOffset || document.documentElement.scrollTop;
-    if(document.getElementsByClassName('product__header')[0])
-      document.getElementsByClassName('product__header')[0].style.transform = "translateY("+ scrolled/4 +"px) translateZ(0)";
-    if(document.getElementsByClassName('product__title')[0])
-    document.getElementsByClassName('product__title')[0].style.transform = "translate(-50%,calc(-50% + -"+ scrolled/2 +"px))";
+    if(document.getElementsByClassName('product__header')[0]){
+      if(this.refs.header)
+        this.refs.header.style.transform = "translateY("+ scrolled/4 +"px) translateZ(0)";
+      if(this.refs.title)
+        this.refs.title.style.transform = "translate3d(-50%,calc(-50% + -"+ scrolled/2 +"px),0)";
+    }
     if(scrolled > document.getElementsByClassName('product__header')[0].offsetHeight)
       document.getElementsByClassName("header__left")[0].classList.add('active');
     else
@@ -71,6 +73,7 @@ class Project extends Component {
   }
 
   render() {
+    console.log("render")
 
     let divStyle = {
       backgroundImage: 'url(' + this.state.data.cover + ')',

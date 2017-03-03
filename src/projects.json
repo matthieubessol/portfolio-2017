@@ -2,40 +2,6 @@
   "project": [
     {
       "id":0,
-      "name": "mouvies",
-      "nameUrl": "mouvies",
-      "linkType":"website",
-      "baseline": "A new design for a new Youtube Channel",
-      "cover": "/images/mouvies/cover.jpg",
-      "what":"iOS, Android, Web",
-      "urlToProject":"http://www.matthieubessol.com/movie/client",
-      "role":"Developer",
-      "year":"2016-2017",
-      "client":"Tag Heuer",
-      "agency":"Solo project",
-      "color":"#FF004F",
-      "description":"Mouvies is a project I've started to learn React. It's a movie search engine base in TMDB's API. While I was progressing, I wanted to test React Native and enjoy the reusability of the code. I found React Native very clever and wanted to go deeper. The app is currently in progress and there is a first version of the website online.",
-      "images":[
-        {
-          "url":"/images/mouvies/mouvies_01.jpg",
-          "type":1
-        },
-        {
-          "url":"/images/mouvies/mouvies_04.jpg",
-          "type":1
-        },
-        {
-          "url":"/images/mouvies/mouvies_03.jpg",
-          "type":"full"
-        },
-        {
-          "url":"/images/mouvies/mouvies_02.jpg",
-          "type":1
-        }
-      ]
-    },
-    {
-      "id":1,
       "name": "arianespace",
       "nameUrl": "arianespace",
       "urlToProject":"http://www.arianespace.com/",
@@ -85,31 +51,35 @@
       ]
     },
     {
-      "id":2,
-      "name": "the hiker",
-      "nameUrl": "thehiker",
-      "baseline": "Just do it",
-      "cover": "/images/thehiker/cover.jpg",
+      "id":1,
+      "name": "mouvies",
+      "nameUrl": "mouvies",
       "linkType":"website",
-      "urlToProject":"http://www.matthieubessol.com/thehiker/",
-      "what":"Website",
-      "role":"Full Stack Developer",
-      "year":"2016",
-      "client":"School",
+      "baseline": "A new design for a new Youtube Channel",
+      "cover": "/images/mouvies/cover.jpg",
+      "what":"iOS, Android, Web",
+      "urlToProject":"http://code-418.com/mouvies/",
+      "role":"Developer",
+      "year":"2016-2017",
+      "client":"Tag Heuer",
       "agency":"Solo project",
-      "color":"#6F6F6F",
-      "description":"After a nice trip in Canada, I wanted to imagine with a friend how a travel website can be done. The response was The Hiker. A website where articles are written to make you feel something. We wanted to make it personnal. To don't be lost while visiting the website, we used sound, animation and pictures to continue the travel. Performance of images loading was also a key feature. It was also a way to develop a website with pure Javascript.",
+      "color":"#FF004F",
+      "description":"Mouvies is a project I've started to learn React. It's a movie search engine base in TMDB's API. While I was progressing, I wanted to test React Native and enjoy the reusability of the code. I found React Native very clever and wanted to go deeper. The app is currently in progress and there is a first version of the website online.",
       "images":[
         {
-          "url":"/images/thehiker/thehiker_1.jpg",
+          "url":"/images/mouvies/mouvies_01.jpg",
           "type":1
         },
         {
-          "url":"/images/thehiker/thehiker_3.jpg",
+          "url":"/images/mouvies/mouvies_04.jpg",
+          "type":1
+        },
+        {
+          "url":"/images/mouvies/mouvies_03.jpg",
           "type":"full"
         },
         {
-          "url":"/images/thehiker/thehiker_2.jpg",
+          "url":"/images/mouvies/mouvies_02.jpg",
           "type":1
         }
       ]
@@ -150,6 +120,36 @@
     },
     {
       "id":4,
+      "name": "the hiker",
+      "nameUrl": "thehiker",
+      "baseline": "Just do it",
+      "cover": "/images/thehiker/cover.jpg",
+      "linkType":"website",
+      "urlToProject":"http://www.code-418.com/thehiker/",
+      "what":"Website",
+      "role":"Full Stack Developer",
+      "year":"2016",
+      "client":"School",
+      "agency":"Solo project",
+      "color":"#6F6F6F",
+      "description":"After a nice trip in Canada, I wanted to imagine with a friend how a travel website can be done. The response was The Hiker. A website where articles are written to make you feel something. We wanted to make it personnal. To don't be lost while visiting the website, we used sound, animation and pictures to continue the travel. Performance of images loading was also a key feature. It was also a way to develop a website with pure Javascript.",
+      "images":[
+        {
+          "url":"/images/thehiker/thehiker_1.jpg",
+          "type":1
+        },
+        {
+          "url":"/images/thehiker/thehiker_3.jpg",
+          "type":"full"
+        },
+        {
+          "url":"/images/thehiker/thehiker_2.jpg",
+          "type":1
+        }
+      ]
+    },
+    {
+      "id":5,
       "name": "droom",
       "nameUrl": "droom",
       "baseline": "Don't crack under pressure",
