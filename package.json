@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://matthieubessol.github.io/portfolio-2017/",
   "devDependencies": {
     "gh-pages": "^0.12.0",
     "react-scripts": "0.8.4"
