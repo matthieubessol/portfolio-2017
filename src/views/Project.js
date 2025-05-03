@@ -9,6 +9,9 @@ import Header from "../components/Header";
 
 import smoothScroll from "smoothscroll";
 
+const url_prefix =
+  process.env.NODE_ENV === "production" ? "/portfolio-2017" : "";
+
 class Project extends Component {
   constructor(props) {
     super(props);
@@ -85,7 +88,7 @@ class Project extends Component {
 
   render() {
     let divStyle = {
-      backgroundImage: "url(" + this.state.data.cover + ")",
+      backgroundImage: "url(" + url_prefix + this.state.data.cover + ")",
     };
 
     return (
