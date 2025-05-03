@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import App from "./App";
-import { Router, Route, browserHistory, IndexRoute } from "react-router";
+import { Router, Route, hashHistory, IndexRoute } from "react-router";
 import "./index.css";
 
 import Project from "./views/Project";
 import Home from "./views/Home";
 
-const url_prefix =
-  process.env.NODE_ENV === "production" ? "/portfolio-2017" : "";
+const url_prefix = ""; // Remove the url_prefix since we're using hashHistory
 
 class Routes extends Component {
   constructor(props) {
@@ -26,15 +25,15 @@ class Routes extends Component {
 
   render() {
     return (
-      <Router history={browserHistory}>
+      <Router history={hashHistory}>
         <Route
-          path={url_prefix}
+          path="/"
           component={App}
           currentProjectHome={this.currentProjectHome.bind(this)}
           ignoreScrollBehavior
         >
           <IndexRoute component={Home} />
-          <Route path={`${url_prefix}/:nameProject`} component={Project} />
+          <Route path="/:nameProject" component={Project} />
           <Route path="*" component={Home} />
         </Route>
       </Router>
