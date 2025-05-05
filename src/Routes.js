@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import App from "./App";
-import { Router, Route, hashHistory, IndexRoute } from "react-router";
+import { Router, Route, browserHistory, IndexRoute } from "react-router";
 import "./index.css";
 
 import Project from "./views/Project";
 import Home from "./views/Home";
-
-const url_prefix = ""; // Remove the url_prefix since we're using hashHistory
 
 class Routes extends Component {
   constructor(props) {
@@ -25,7 +23,7 @@ class Routes extends Component {
 
   render() {
     return (
-      <Router history={hashHistory}>
+      <Router history={browserHistory}>
         <Route
           path="/"
           component={App}

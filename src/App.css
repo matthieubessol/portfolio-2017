@@ -726,7 +726,7 @@
   width: 44%;
   height: 61%;
   position: absolute;
-  background: url("/portfolio-2017/images/logo/hello.png");
+  background: url(/public/images/logo/hello.png);
   background-size: contain;
   left: 50%;
   top: 50%;
@@ -741,7 +741,7 @@
   width: 44%;
   height: 47%;
   position: absolute;
-  background: url("/portfolio-2017/images/logo/punch.png");
+  background: url(/public/images/logo/punch.png);
   background-size: contain;
   left: 50%;
   top: 50%;
@@ -1227,7 +1227,7 @@ a {
 .about__left {
   flex: 1;
   height: 100%;
-  background-image: url("/portfolio-2017/profile.jpg");
+  background-image: url("/public/profile.jpg");
   background-size: cover;
   transition-delay: 0.1s;
   background-position-y: bottom;
@@ -1300,15 +1300,15 @@ a {
   margin-right: 1.25rem;
 }
 .logos__item--github {
-  background-image: url("/portfolio-2017/images/logo/github.png");
+  background-image: url(/public/images/logo/github.png);
   background-size: cover;
 }
 .logos__item--codepen {
-  background-image: url("/portfolio-2017/images/logo/codepen.png");
+  background-image: url(/public/images/logo/codepen.png);
   background-size: cover;
 }
 .logos__item--twitter {
-  background-image: url("/portfolio-2017/images/logo/twitter.jpg");
+  background-image: url(/public/images/logo/twitter.jpg);
   background-size: cover;
 }
 

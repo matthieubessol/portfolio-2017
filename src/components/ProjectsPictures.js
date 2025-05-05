@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-const url_prefix =
-  process.env.NODE_ENV === "production" ? "/portfolio-2017" : "";
+const url_prefix = process.env.NODE_ENV === "production" ? "" : "";
 
 class ProjectsPictures extends Component {
   constructor(props) {

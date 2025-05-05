@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 
-const url_prefix =
-  process.env.NODE_ENV === "production" ? "/portfolio-2017" : "";
+const url_prefix = process.env.NODE_ENV === "production" ? "" : "";
 
 class ProjectsMobile extends Component {
   render() {
